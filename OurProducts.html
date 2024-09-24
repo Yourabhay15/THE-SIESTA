@@ -11,7 +11,6 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
             padding: 0;
-            
         }
 
         header {
@@ -35,6 +34,7 @@
             font-size: 50px;
             font-weight: bold;
             color: #667eea;
+            
         }
 
         .nav-links {
@@ -58,8 +58,6 @@
         .nav-links a:hover {
             color: #e74c3c;
         }
-
-        /* Dropdown Styles */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -113,12 +111,25 @@
             border-radius: 5px;
             width: 300px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .product img {
             width: 100%;
             height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.05);
         }
 
         .product-info {
@@ -226,7 +237,7 @@
                         <a href="#">Domestic Hotel</a>
                     </div>
                 </li>
-                <li><a href="Restaurent.html">Restaurant</a></li>
+                <li><a href="Restaurant.html">Restaurant</a></li>
                 <li><a href="contactus.html">Contact</a></li>
             </ul>
         </nav>
@@ -241,20 +252,23 @@
         <div class="featured-products">
             <div class="product">
                 <img src="main_image_1.jpg" alt="Hotel 1">
+                <a href="#" class="product">
                 <div class="product-info">
                     <h2>Luxury Hotel</h2>
-                    <p>Experience luxury and comfort in our premier hotel.</p>
+                    <p>Experience luxury and comfort in our premier hotel.</p></a>
                 </div>
             </div>
             <div class="product">
                 <img src="main_image_3.jpg" alt="Hotel 2">
+                <a href="#" class="product">
                 <div class="product-info">
                     <h2>Cozy Inn</h2>
-                    <p>A warm and inviting place to relax and recharge.</p>
+                    <p>A warm and inviting place to relax and recharge.</p></a>
                 </div>
             </div>
             <div class="product">
                 <img src="main_image_2.jpg" alt="Hotel 3">
+                <a href="#" class="product"></a>
                 <div class="product-info">
                     <h2>Beach Resort</h2>
                     <p>Enjoy sun, sand, and sea at our beautiful beach resort.</p>
