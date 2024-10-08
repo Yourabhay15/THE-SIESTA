@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels in the Region</title>
+</head>
+<style>
+
+* {
+  margin: 0;
+  padding: 6%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.hotels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+}
+
+.hotel-card {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: scale(1.05);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: auto;
+}
+
+.hotel-card h2 {
+  font-size: 1.5em;
+  margin: 15px;
+  color: #333;
+}
+
+.hotel-card p {
+  font-size: 1em;
+  margin: 0 15px 15px 15px;
+  color: #666;
+}
+
+.book-btn {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.book-btn:hover {
+  background-color: #218838;
+}
+
+
+
+
+</style>
+<body>
+
+  <header>
+    <h1>Hotels in the Region</h1>
+  </header>
+
+  <section class="hotels">
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 1">
+      <h2>HOTEL INTERNATIONAL</h2>
+      <p>Location: Mohyal Nagar,Jalandhar</p>
+      <p>Price: 1487 Rs./night</p>
+      <a href=""<button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 2">
+      <h2>Beach Resort 2</h2>
+      <p>Location: Beachfront</p>
+      <p>Price: $180/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 3">
+      <h2>Mountain Retreat 3</h2>
+      <p>Location: Mountains</p>
+      <p>Price: $150/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 4">
+      <h2>Urban Lodge 4</h2>
+      <p>Location: City Center</p>
+      <p>Price: $220/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 5">
+      <h2>Country Inn 5</h2>
+      <p>Location: Countryside</p>
+      <p>Price: $130/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 6">
+      <h2>Seaside Escape 6</h2>
+      <p>Location: Seaside</p>
+      <p>Price: $250/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 7">
+      <h2>Luxury Villa 7</h2>
+      <p>Location: Hillside</p>
+      <p>Price: $300/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 8">
+      <h2>Resort Paradise 8</h2>
+      <p>Location: Beach</p>
+      <p>Price: $400/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://via.placeholder.com/300x200" alt="Hotel 9">
+      <h2>Budget Stay 9</h2>
+      <p>Location: Suburbs</p>
+      <p>Price: $90/night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+  </section>
+
+</body>
+</html>
