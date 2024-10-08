@@ -1,170 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotels in the Region</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            color: #fff;
+            padding: 1rem 0;
+            background-color: #134b61;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(Dormitory0.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        .hotel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .hotel-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .hotel-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hotel-info {
+            padding: 1.5rem;
+        }
+
+        .hotel-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            margin-right: 0.5rem;
+        }
+
+        .hotel-address {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1a5f7a;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #134b61;
+        }
+
+        footer {
+            background-color: #1a5f7a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-<style>
-
-* {
-  margin: 0;
-  padding: 6%;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #333;
-}
-
-.hotels {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px;
-}
-
-.hotel-card {
-  background-color: white;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.hotel-card:hover {
-  transform: scale(1.05);
-}
-
-.hotel-card img {
-  width: 100%;
-  height: auto;
-}
-
-.hotel-card h2 {
-  font-size: 1.5em;
-  margin: 15px;
-  color: #333;
-}
-
-.hotel-card p {
-  font-size: 1em;
-  margin: 0 15px 15px 15px;
-  color: #666;
-}
-
-.book-btn {
-  display: block;
-  width: 80%;
-  margin: 15px auto;
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  text-align: center;
-}
-
-.book-btn:hover {
-  background-color: #218838;
-}
-
-
-
-
-</style>
 <body>
+    <header>
+        <nav class="container">
+            <div class="logo">Hotels</div>
+            <ul class="nav-links">
+                <li><a href="OurProducts.html">Home</a></li>
+                <li><a href="Restaurant.html">Restaurent</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <h1>Hotels in the Region</h1>
-  </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dormitory & Guest House</h1>
+            <p>Explore top-rated accommodations in the heart of Punjab</p>
+        </div>
+    </section>
 
-  <section class="hotels">
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 1">
-      <h2>HOTEL INTERNATIONAL</h2>
-      <p>Location: Mohyal Nagar,Jalandhar</p>
-      <p>Price: 1487 Rs./night</p>
-      <a href=""<button class="book-btn">Book Now</button>
-    </div>
+    <main class="container">
+        <section id="hotels" class="hotel-list">
+            <div class="hotel-card">
+                <div class="hotel-image" style="background-image: url(Domestic1.jpg);"></div>
+                <div class="hotel-info">
+                    <h2 class="hotel-name">Hotel International</h2>
+                    <div class="hotel-rating">
+                        <span class="stars">★★★</span>
+                        <span>3.5</span>
+                    </div>
+                    <p class="hotel-address">Police Line Road Opp. Bus Stand, Jalandhar 144001 </p>
+                    <a href="https://www.tripadvisor.in/Hotel_Review-g488276-d678092-Reviews-Hotel_International-Jalandhar_Jalandhar_District_Punjab.html" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <div class="hotel-image" style="background-image: url(Domitory2.jpg);"></div>
+                <div class="hotel-info">
+                    <h2 class="hotel-name">WestCottas Hotel</h2>
+                    <div class="hotel-rating">
+                        <span class="stars">★★★</span>
+                        <span>3.2</span>
+                    </div>
+                    <p class="hotel-address">Avtar Nagar Road, Gujral Nagar, Jalandhar, India, 144002</p>
+                    <a href="https://www.google.com/travel/search?q=WestCottas%20Hotel&g2lb=4814050%2C4874190%2C4893075%2C4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72473841%2C72481459%2C72485658%2C72536387%2C72602734%2C72614662%2C72616120%2C72619927%2C72620306%2C72628719%2C72647020%2C72648289%2C72658035%2C72671093%2C72686036%2C72715671%2C72729615%2C72749221%2C72757849&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaRwopEicyJTB4MzkxYTViY2VhYWMwNjNlNToweDViYjQwYTYyNGVjZmQ3YmYSGhIUCgcI6A8QChgLEgcI6A8QChgMGAEyAhAA&qs=CAEyE0Nnb0l2Ni1fOXFUTWd0cGJFQUU4AkIJCb_Xz05iCrRbQgkJv9fPTmIKtFs&ap=ugEGcHJpY2Vz&ictx=1&ved=0CAAQ5JsGahcKEwjg1o3qzP6IAxUAAAAAHQAAAAAQEA" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <div class="hotel-image" style="background-image: url(Dormitory3.jpg);"></div>
+                <div class="hotel-info">
+                    <h2 class="hotel-name">Hotel O Flagship Hotel Rajmahal</h2>
+                    <div class="hotel-rating">
+                        <span class="stars">★★★</span>
+                        <span>3.7</span>
+                    </div>
+                    <p class="hotel-address">Central Town,Jalandhar, Punjab 144001</p>
+                    <a href="https://www.google.com/travel/search?q=Hotel%20O%20Flagship%20Hotel%20Rajmahal&g2lb=4814050%2C4874190%2C4893075%2C4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72473841%2C72481459%2C72485658%2C72536387%2C72602734%2C72614662%2C72616120%2C72619927%2C72620306%2C72628719%2C72647020%2C72648289%2C72658035%2C72671093%2C72686036%2C72715671%2C72729615%2C72749221%2C72757849&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaRwopEicyJTB4MzkxYTVhODA5NTU1NTU1NToweDI2YTQwOThhODY1MmU1MzkSGhIUCgcI6A8QChgJEgcI6A8QChgKGAEyAhAA&qs=CAEyE0Nnb0l1Y3JMc3FpeGd0SW1FQUU4AkIJCTnlUoaKCaQmQgkJOeVShooJpCY&ap=ugEGcHJpY2Vz&ictx=1&ved=0CAAQ5JsGahcKEwiw7N_Lzf6IAxUAAAAAHQAAAAAQEA" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <div class="hotel-image" style="background-image: url(Dormitory4.jpg);"></div>
+                <div class="hotel-info">
+                    <h2 class="hotel-name">Best Western Summerlea</h2>
+                    <div class="hotel-rating">
+                        <span class="stars">★★★★</span>
+                        <span>4.1</span>
+                    </div>
+                    <p class="hotel-address">Mohyal Nagar,Jalandhar, Punjab 144003</p>
 
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 2">
-      <h2>Beach Resort 2</h2>
-      <p>Location: Beachfront</p>
-      <p>Price: $180/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
+                    <a href="https://www.google.com/travel/search?q=best%20western%20summerlea&g2lb=4814050%2C4874190%2C4893075%2C4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72473841%2C72481459%2C72485658%2C72536387%2C72602734%2C72614662%2C72616120%2C72619927%2C72620306%2C72628719%2C72647020%2C72648289%2C72658035%2C72671093%2C72686036%2C72715671%2C72729615%2C72749221%2C72757849&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaRwopEicyJTB4MzkxYTViY2NkZjU5MjM1ZDoweGE0ZmRiYWFmMmE1YjAwYjcSGhIUCgcI6A8QChgQEgcI6A8QChgRGAEyAhAA&qs=CAEyFENnc0l0NEhzMHZMVjd2NmtBUkFCOAJCCQm3AFsqr7r9pEIJCbcAWyqvuv2k&ap=ugEGcHJpY2Vz&ictx=1&ved=0CAAQ5JsGahcKEwiQidyZzv6IAxUAAAAAHQAAAAAQEA" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <div class="hotel-image" style="background-image: url(dormitory5.jpg);"></div>
+                <div class="hotel-info">
+                    <h2 class="hotel-name">HOTEL SITI CASTLE</h2>
+                    <div class="hotel-rating">
+                        <span class="stars">★★★</span>
+                        <span>2.7</span>
+                    </div>
+                    <p class="hotel-address">Central Town,Jalandhar, Punjab ,144001</p>
+                   
+                    <a href="https://www.google.com/travel/search?q=HOTEL%20SITI%20CASTLE&g2lb=4814050%2C4874190%2C4893075%2C4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72473841%2C72481459%2C72485658%2C72536387%2C72602734%2C72614662%2C72616120%2C72619927%2C72620306%2C72628719%2C72647020%2C72648289%2C72658035%2C72671093%2C72686036%2C72715671%2C72729615%2C72749221%2C72757849&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaRwopEicyJTB4MzkxYTViZjUyYWJkZTIwMzoweGNmYTNkNGRlNjcwYzhkODMSGhIUCgcI6A8QChgKEgcI6A8QChgLGAEyAhAA&qs=CAEyFENnc0lnNXV5dU9hYjlkSFBBUkFCOAJCCQmDjQxn3tSjz0IJCYONDGfe1KPP&ap=ugEGcHJpY2Vz&ictx=1&ved=0CAAQ5JsGahcKEwiQ2fGUz_6IAxUAAAAAHQAAAAAQEA" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <div class="hotel-image" style="background-image: url(Domitory6.jpg);"></div>
+                <div class="hotel-info">
+                    <h2 class="hotel-name">Bloom Hotel</h2>
+                    <div class="hotel-rating">
+                        <span class="stars">★★★</span>
+                        <span>3.7</span>
+                    </div>
+                    <p class="hotel-address">Model Town, Jalandhar, Punjab 144003</p>
 
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 3">
-      <h2>Mountain Retreat 3</h2>
-      <p>Location: Mountains</p>
-      <p>Price: $150/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
+                    <a href="https://staybloom.com/hotels/jalandhar" class="btn">Book Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 4">
-      <h2>Urban Lodge 4</h2>
-      <p>Location: City Center</p>
-      <p>Price: $220/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
-
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 5">
-      <h2>Country Inn 5</h2>
-      <p>Location: Countryside</p>
-      <p>Price: $130/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
-
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 6">
-      <h2>Seaside Escape 6</h2>
-      <p>Location: Seaside</p>
-      <p>Price: $250/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
-
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 7">
-      <h2>Luxury Villa 7</h2>
-      <p>Location: Hillside</p>
-      <p>Price: $300/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
-
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 8">
-      <h2>Resort Paradise 8</h2>
-      <p>Location: Beach</p>
-      <p>Price: $400/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
-
-    <div class="hotel-card">
-      <img src="https://via.placeholder.com/300x200" alt="Hotel 9">
-      <h2>Budget Stay 9</h2>
-      <p>Location: Suburbs</p>
-      <p>Price: $90/night</p>
-      <button class="book-btn">Book Now</button>
-    </div>
-  </section>
-
+    <footer>
+        <p>&copy; 2023 Jalandhar Hotels. All rights reserved.</p>
+    </footer>
 </body>
 </html>
