@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products</title>
-    <link rel="icon" type="image/x-icon" href="favicon_io (4)/favicon.ico">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +11,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
             padding: 0;
+            
         }
 
         header {
@@ -35,7 +35,6 @@
             font-size: 50px;
             font-weight: bold;
             color: #667eea;
-            
         }
 
         .nav-links {
@@ -59,6 +58,8 @@
         .nav-links a:hover {
             color: #e74c3c;
         }
+
+        /* Dropdown Styles */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -112,25 +113,33 @@
             border-radius: 5px;
             width: 300px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        #yoho{
+            text-align: justify;
+            color: black;
+            font-size: 1.2em;
+            padding: 1%;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #yoho2{
+            text-align: justify;
+            color: black;
+            font-size: 1.2em;
+            padding: 1%;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #yoho3{
+            text-align: justify;
+            color: black;
+            font-size: 1.2em;
+            padding: 1%;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
         .product img {
             width: 100%;
             height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .product:hover img {
-            transform: scale(1.05);
         }
 
         .product-info {
@@ -214,11 +223,6 @@
             line-height: 1.6;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         .fade-in {
             animation: fadeIn 1s ease-out;
         }
@@ -253,25 +257,22 @@
         <div class="featured-products">
             <div class="product">
                 <img src="main_image_1.jpg" alt="Hotel 1">
-                <a href="Nearby Hotels.html" class="product">
                 <div class="product-info">
-                    <h2>Luxury Hotel</h2>
-                    <p>Experience luxury and comfort in our premier hotel.</p></a>
+                    <b><a id="yoho" href="Nearby Hotels.html" target="_blank">Luxuary hotels</a></b>
+                    <p>Experience luxury and comfort in our premier hotel.</p>
                 </div>
             </div>
             <div class="product">
                 <img src="main_image_3.jpg" alt="Hotel 2">
-                <a href="#" class="product">
                 <div class="product-info">
-                    <h2>Cozy Inn</h2>
-                    <p>A warm and inviting place to relax and recharge.</p></a>
+                    <a id="yoho2" href="Go Stay.html" target="_blank"><b>Cozy Inn</b></a>
+                    <p>A warm and inviting place to relax and recharge.</p>
                 </div>
             </div>
             <div class="product">
-                <img src="main_image_2.jpg" alt="Hotel 3">
-                <a href="#" class="product"></a>
+                <img src="Dormitory0.jpg" alt="Hotel 3">
                 <div class="product-info">
-                    <h2>Beach Resort</h2>
+                    <a id="yoho3" href="Domestic.html" target="_blank"><b>Guest House & Dormitory</b></a>
                     <p>Enjoy sun, sand, and sea at our beautiful beach resort.</p>
                 </div>
             </div>
@@ -290,7 +291,7 @@
                 <p>Co-Founder</p>
             </div>
             <div class="team-member fade-in">
-                <img src="Cat.jpeg" height="150px" width="150px" alt="Abhay">
+                <img src="Image03.jpg" height="150px" width="150px" alt="Abhay">
                 <h3>Abhay Kumar</h3>
                 <p>Lead Designer</p>
             </div>
