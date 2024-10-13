@@ -276,9 +276,9 @@
         <nav class="container">
             <div class="logo">Go Stay</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#hotels">Hotels</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="OurProducts.html">Home</a></li>
+                <li><a href="Restaurant.html">Restaurant</a></li>
+                <li><a href="contactus.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -402,22 +402,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('header');
-            const scrollDown = document.querySelector('.scroll-down');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                    scrollDown.style.opacity = '0';
-                } else {
-                    header.classList.remove('scrolled');
-                    scrollDown.style.opacity = '1';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
